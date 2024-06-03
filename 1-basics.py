@@ -127,5 +127,35 @@ datetime.now() # will show a datetime object that has the current time
 print("=============Print todays date in YYYY MM DD==================")
 print(datetime.now().strftime('%Y %m %d')) # We can use multiple such methods 
 
+# Exception handling: When an error occurs we need our code to gracefully handle it without just stopping. 
+## Here is how we can handle errors when the program is running
+try:
+    # Code that might raise an exception
+    pass
+except Exception as e: 
+    # Code that runs if the exception occurs
+    pass
+else:
+    # Code that runs if no exception occurs
+    pass
+finally:
+    # Code that always runs, regardless of exceptions
+    pass
+
+## For example let's consider exception handling on accessing an element that is not present in a list l
+l = [1, 2, 3, 4, 5]
+
+print("==========Print: Error: Index 10 is out of range for the list. \n Execution completed.=============")
+index = 10
+try:
+    # Attempt to access an element at an invalid index
+    element = l[index]
+    print(f"Element at index {index} is {element}")
+except IndexError:
+    print(f"Error: Index {index} is out of range for the list.")
+finally:
+    print("Execution completed.")
+
+
 # Generators
 # Checkout generators here: https://www.startdataengineering.com/post/writing-memory-efficient-dps-in-python/#1-using-generators
