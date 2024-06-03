@@ -1,1 +1,34 @@
 # Python Essentials for Data Engineers 
+
+## Run on Codespaces
+
+Open codespaces and wait for codespaces to setup. The process of opening codespaces and waiting for completion is shown below.
+
+**NOTE**: Make sure to turn off codespaces, you only have limited free usage per month.
+
+![Open codespace](./assets/cs.png)
+![Wait for codespace to setup](./assets/cs2.png)
+
+## Running on your laptop
+
+Clone the repo, cd into it and setup the virtual environment as shown below.
+
+```bash
+git clone https://github.com/josephmachado/python_essentials_for_data_engineers.git
+cd python_essentials_for_data_engineers
+
+python -m venv myenv
+source myenv/bin/activate
+pip install -r requirements.txt
+
+# open python REPL with 
+python
+```
+
+## Using python REPL
+
+![REPL](./assets/repl.png)
+
+In the Python REPL you can try out the commands and do the exercises.
+
+To run pytest (under ./tests folder) you will need to run the `python -m pytest ./tests` command.
