@@ -124,3 +124,87 @@ duckdb_conn.commit()
 duckdb_conn.close()
 
 print("Customer table created successfully!")
+
+import csv
+import datetime
+import random
+
+
+# Generate random customer names
+def generate_name():
+    first_names = [
+        "Alice",
+        "Bob",
+        "Charlie",
+        "David",
+        "Emma",
+        "Frank",
+        "Grace",
+        "Henry",
+        "Ivy",
+        "Jack",
+    ]
+    last_names = [
+        "Smith",
+        "Johnson",
+        "Williams",
+        "Brown",
+        "Jones",
+        "Garcia",
+        "Miller",
+        "Davis",
+        "Rodriguez",
+        "Martinez",
+    ]
+    return random.choice(first_names) + " " + random.choice(last_names)
+
+
+# Generate random age between 18 and 70
+def generate_age():
+    return random.randint(18, 70)
+
+
+# Generate random gender
+def generate_gender():
+    return random.choice(["Male", "Female"])
+
+
+# Generate random purchase amount between 10 and 1000
+def generate_purchase_amount():
+    return round(random.uniform(10, 1000), 2)
+
+
+# Generate random purchase date within the last year
+def generate_purchase_date():
+    end_date = datetime.date.today()
+    start_date = end_date - datetime.timedelta(days=365)
+    random_date = start_date + datetime.timedelta(days=random.randint(0, 365))
+    return random_date.strftime("%Y-%m-%d")
+
+
+# Generate CSV data
+with open("./data/sample_data.csv", "w", newline="") as csvfile:
+    fieldnames = [
+        "Customer_ID",
+        "Customer_Name",
+        "Age",
+        "Gender",
+        "Purchase_Amount",
+        "Purchase_Date",
+    ]
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+    for i in range(100):
+        writer.writerow(
+            {
+                "Customer_ID": i + 1,
+                "Customer_Name": generate_name(),
+                "Age": generate_age(),
+                "Gender": generate_gender(),
+                "Purchase_Amount": generate_purchase_amount(),
+                "Purchase_Date": generate_purchase_date(),
+            }
+        )
+
+print("CSV file generated successfully!")
