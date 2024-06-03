@@ -5,7 +5,7 @@
     * [Running on your laptop](#running-on-your-laptop)
     * [Using python REPL](#using-python-repl)
 
-Code for Blog at: [Python Essentials for Data Engineers](https://startdataengineering/post/python-for-de/).
+Code for Blog at: [Python Essentials for Data Engineers](https://www.startdataengineering/post/python-for-de/).
 
 # Python Essentials for Data Engineers 
 
