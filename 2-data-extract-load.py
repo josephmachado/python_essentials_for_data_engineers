@@ -10,9 +10,8 @@
 # Local disk: csv, excel, json, xml files
 # SFTP\FTP server
 
-## Databases: When reading or writing to a database we use a database driver. Database driver's are libraries that we can use to read or write to a database.
-## Question: Read data from a sqlite3 database and write to a DuckDB database (note: DuckDB has tools to do this easily, this code is for demo)
-print("======== sqlite3 -> DuckDB ===============")
+# Databases: When reading or writing to a database we use a database driver. Database drivers are libraries that we can use to read or write to a database.
+# Question: How do you read data from a sqlite3 database and write to a DuckDB database?
 import sqlite3  # we import the sqlite3 database driver
 
 # Connect to the SQLite database
@@ -37,17 +36,19 @@ VALUES (?, ?, ?, ?, ?, ?)
 duckdb_conn.executemany(insert_query, customers)
 
 # Commit and close the connections
-sqlite_conn.commit()
+# Commit tells the DB connection to send the data to the database and commit it, if you don't commit the data will not be inserted
 duckdb_conn.commit()
+
+# We should close the connection, as DB connections are expensive
 sqlite_conn.close()
 duckdb_conn.close()
 
-print("Data transferred successfully!")
+# Cloud storage
+# Question: How do you read data from the S3 location given below and write the data to a DuckDB database?
+# Data source: https://docs.opendata.aws/noaa-ghcn-pds/readme.html station data at path "csv.gz/by_station/ASN00002022.csv.gz"
+# Hint: Use boto3 client with UNSIGNED config to access the S3 bucket
+# Hint: The data will be zipped you have to unzip it
 
-## Cloud storage
-## Question: Read data from the S3 location given below and write the data to a DuckDB database
-## Data source: https://docs.opendata.aws/noaa-ghcn-pds/readme.html␛
-print("======== Weather S3 -> DuckDB ===============")
 import csv
 import gzip
 from io import StringIO
@@ -88,11 +89,11 @@ duckdb_conn.executemany(insert_query, data[:100000])
 duckdb_conn.commit()
 duckdb_conn.close()
 
-print("Data transferred successfully!")
+# API
+# Question: How do you read data from the CoinCap API given below and write the data to a DuckDB database?
+# URL: "https://api.coincap.io/v2/exchanges"
+# Hint: use requests library
 
-## API
-## Question: Read data from CoinCap API given below and write the data to a DuckDB database
-print("======== API -> DuckDB ===============")
 import duckdb
 import requests
 
@@ -112,6 +113,7 @@ INSERT INTO Exchanges (id, name, rank, percentTotalVolume, volumeUsd, tradingPai
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 # Prepare data for insertion
+# Hint: Why are we changing the data type?
 insert_data = [
     (
         exchange["exchangeId"],
@@ -137,11 +139,10 @@ duckdb_conn.executemany(insert_query, insert_data)
 duckdb_conn.commit()
 duckdb_conn.close()
 
-print("Data transferred successfully!")
+# Local disk
+# Question: How do you read a CSV file from local disk and write it to a database?
+# Look up open function with csvreader for python
 
-## Local disk
-## Question: Read a csv file from local disk and write it to a database
-print("======== Local file -> Print ===============")
 import csv
 
 data_location = "./data/customers.csv"
