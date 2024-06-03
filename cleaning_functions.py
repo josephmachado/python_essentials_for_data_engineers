@@ -1,3 +1,6 @@
+# Simple function to remove duplicates
+
+
 def remove_duplicates(data, unique_key):
     data_unique = []
     unique_key_set = set()

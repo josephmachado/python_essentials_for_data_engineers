@@ -17,6 +17,13 @@ def test_remove_duplicates():
 
     # Assert that duplicates were removed
     assert len(unique_data) == 3
+    # Assert the actual values
+    expected_data = [
+        {"Customer_ID": 1, "Name": "Alice"},
+        {"Customer_ID": 2, "Name": "Bob"},
+        {"Customer_ID": 3, "Name": "Charlie"},
+    ]
+    assert unique_data == expected_data
 
 
-# Run this with python -m pytest ./tests
+# Run this with the command python -m pytest ./tests
