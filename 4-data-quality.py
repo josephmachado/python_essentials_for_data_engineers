@@ -4,7 +4,7 @@ from cuallee import Check, CheckLevel
 # Read CSV file into Polars DataFrame
 df = pl.read_csv("./data/sample_data.csv")
 
-# Nulls on column Id
+# Check for Nulls on column Id and that Customer_ID column is unique
 check = Check(CheckLevel.ERROR, "Completeness")
 validation_results_df = (
     check.is_complete("Customer_ID").is_unique("Customer_ID").validate(df)
