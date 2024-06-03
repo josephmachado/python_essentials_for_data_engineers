@@ -1,8 +1,58 @@
-a = 10 # assign value 10 to a variable named a
+# Variable: A storage location identified by its name, containing some value.
+
+# Value of 10 is assigned to variable a and 20 to variable b
+a = 10
 b = 20
 
+# We can do any operation (arithmetic for numbers, string transformation for text) on variables
+# For example We can do any arithmetic calculation on numbers
 c = a + b # or any calculation 
 print(c) # will print 30
+
+s = '  Some string '
+# We can perform an operation on this string, for example lets remove the empty spaces in front of and behind the string
+print(s.strip())
+
+# Data Structures are ways of representing data, each has its own pros and cons and places that they are the right fit.
+
+## List: A collection of elements that can be accessed by knowing the location (aka index) of the element
+l = [1, 2, 3, 4]
+l[0] # will be 1
+l[3] # will print 4
+## NOTE: lists retain the order of elements in it but dictionary doesn't
+
+## Dictionary: A collection of key-value pairs, where each key is mapped to a value using a hash function. Provides fast data retrieval based on keys.
+d = {'a': 1, 'b': 2}
+d.get('a') # will print 1
+d.get('b') # will print 2
+## NOTE: The dictionary cannot have duplicate keys
+
+## Set: A collection of unique elements that do not allow duplicates
+my_set = set()
+my_set.add(10)
+my_set.add(10)
+my_set.add(10)
+print(my_set) # This will only show 10, since the set only keeps unique values
+
+## Tuple: A collection of immutable(non changeable) elements, tuples retain their order once created.
+my_tuple = (1, 'hello', 3.14)
+print(my_tuple)  # Output: (1, 'hello', 3.14)
+# Accessing elements by index
+print(my_tuple[0])  # Output: 1
+print(my_tuple[1])  # Output: 'hello'
+
+# Counting occurrences of an element
+count_tuple = (1, 2, 3, 1, 1, 2)
+print(count_tuple.count(1))  # Output: 3
+
+# Finding the index of an element
+print(count_tuple.index(2))  # Output: 1
+
+# Loop
+
+# Functions
+
+# Class and objects
 
 # create functions with def
 def some_function(a, b):
