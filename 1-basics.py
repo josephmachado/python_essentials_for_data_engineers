@@ -37,71 +37,52 @@ print(my_set) # This will only show 10, since the set only keeps unique values
 ## Tuple: A collection of immutable(non changeable) elements, tuples retain their order once created.
 my_tuple = (1, 'hello', 3.14)
 print(my_tuple)  # Output: (1, 'hello', 3.14)
-# Accessing elements by index
+## Accessing elements by index
 print(my_tuple[0])  # Output: 1
 print(my_tuple[1])  # Output: 'hello'
 
-# Counting occurrences of an element
+## Counting occurrences of an element
 count_tuple = (1, 2, 3, 1, 1, 2)
 print(count_tuple.count(1))  # Output: 3
 
-# Finding the index of an element
+## Finding the index of an element
 print(count_tuple.index(2))  # Output: 1
 
-# Loop
+# Loop allows a specific chunk to code to be repeated a certain number of times
+# Example: We can use loop to print numbers 0 through 10
+for i in range(11):
+  print(i)
 
-# Functions
-
-# Class and objects
-
-# create functions with def
-def some_function(a, b):
-  return (a + 5)*b
-
-c = some_function(1, 3) # the value (1+5)*3 = 18 will be assigned to variable c
-
-# We use data structures to store data in Python, the mains ones are dictionary and lists
-
-# dictionary
-# Use it when you have to access values based on its identified (aka key)
-d = {'a': 1, 'b': 2}
-d.get('a') # will print 1
-d.get('b') # will print 2
-
-# list 
-# use it when you need to store a collection of items
-l = [1, 2, 3, 4]
-l[0] # will be 1
-l[3] # will print 4
-
-# NOTE: lists retain the order of elements in it but dictionary doesn't
-
-# Loop
-# We can loop through list and dictionaries and process them as necessary
+## We can loop through our data structures as shown below
+## List loop
 for elt in l:
-  print(elt)
-# the above will print all the elements in list l
+  print(elt) # or any operation you may want to do
+## We can do similar loop for tuples and sets
 
+## Dictionary loop
 for k, v in d.items():
-  print(k, v)
-# The aboce code will print all the key and values in the dictionary d
+  print(f'Key: {k}, Value: {v}') # print key and values in dictionary
 
-# comprehension, aka shortcut to write loops
-[print(elt) for elt in l]
-[print(k, v) for k, v in d.items()]
+## Comprehension is a shorthand way of writing a loop
+## For example we can use the below to multiply every element in list l with 2
+[elt*2 for elt in l]
 
-# we can also use comprehensions to create new lists/dictionary
-new_list = [elt*2 for elt in l] # new_list will have [2, 4, 6, 8] 
+# Functions: A block of code that can be re-used as needed. This allows for us to have logic defined in one place, making it easy to maintainand use.
+## For example lets create a simple function, that takes a list as an input and returns another list whose values are greater than 3
+def gt_three(input_list):
+  return [elt for elt in input_list if elt > 3]
+## NOTE: we use list comprehension with filtering in the above function
 
-# Python comes with some standard libraries to do common operations, 
-# such as datetime library to work with time (although there are better libraries)
-from datetime import datetime # you can import library or your code from another file with the import statement
-datetime.now() # will show a datetime object that has the current time
-datetime.now().strftime('%Y %m %d') # We can use multiple such methods 
+list_1 = [1, 2, 3, 4, 5, 6]
+print(gt_three(list_1)) ## Will print [4, 5, 6]
+
+list_2 = [1, 2, 3, 1, 1, 1]
+print(gt_three(list_2)) ## Will print []
 
 # Classes and Objects
 # Think of a class as a blue print and objects as things created based on that blue print
 # you can define classes in python as shown below
+
 class DataExtractor:
 
   def __init__(self, some_value):
@@ -121,3 +102,14 @@ class DataExtractor:
 de_object = DataExtractor(10)
 print(de_object.some_value)
 # will print 10
+
+# Libraries are code that can be reused.
+
+# Python comes with some standard libraries to do common operations, 
+# such as datetime library to work with time (although there are better libraries)
+from datetime import datetime # you can import library or your code from another file with the import statement
+datetime.now() # will show a datetime object that has the current time
+datetime.now().strftime('%Y %m %d') # We can use multiple such methods 
+
+# Generators
+# Checkout generators here: https://www.startdataengineering.com/post/writing-memory-efficient-dps-in-python/#1-using-generators
