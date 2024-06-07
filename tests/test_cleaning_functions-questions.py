@@ -10,7 +10,7 @@ def test_remove_duplicates():
     unique_data = remove_duplicates(data, unique_key)
 
     # Assert that duplicates were removed
-    # assert len(unique_data) == 3
+    # assert len(unique_data) == some number based on your input
     # Assert the actual values
     expected_data = [
     ]
