@@ -151,3 +151,24 @@ with open(data_location, "r", newline="") as csvfile:
     next(csvreader)  # Skip header row
     for row in csvreader:
         print(row)
+
+# Web scraping
+# Questions: Use beatiful soup to scrape the below website and print all the links in that website
+# URL of the website to scrape
+
+import requests
+from bs4 import BeautifulSoup
+
+# URL of the website to scrape
+url = 'https://example.com'
+
+# Send a GET request to the website
+response = requests.get(url)
+
+# Parse the HTML content of the webpage
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# Example: Find and print all the links on the webpage
+for link in soup.find_all('a'):
+    print(link.get('href'))
+

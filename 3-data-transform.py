@@ -1,5 +1,11 @@
+print(
+    "################################################################################"
+)
+print("Use standard python libraries to do the transformations")
+print(
+    "################################################################################"
+)
 import csv
-from collections import defaultdict
 
 # Question: How do you read data from a CSV file into a list of dictionaries?
 data = []
@@ -48,7 +54,7 @@ for row in data_cleaned:
     del row["Customer_Name"]
 
 # Question: How do you calculate the total purchase amount by Gender?
-total_purchase_by_gender = defaultdict(float)
+total_purchase_by_gender = {}
 for row in data_cleaned:
     total_purchase_by_gender[row["Gender"]] += float(row["Purchase_Amount"])
 
