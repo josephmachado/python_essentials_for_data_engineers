@@ -42,18 +42,21 @@ file_key = "csv.gz/by_station/ASN00002022.csv.gz"
 # Insert data into the DuckDB WeatherData table
 
 # API
-# Question: How do you read data from the CoinCap API given below and write the data to a DuckDB database?
-# URL: "https://api.coincap.io/v2/exchanges"
+# Question: How do you read data from the Pokemon API given below and write the data to a DuckDB database?
+# url = "https://pokeapi.co/api/v2/pokemon/1"
 # Hint: use requests library
 
 # Define the API endpoint
-url = "https://api.coincap.io/v2/exchanges"
+url = "https://pokeapi.co/api/v2/pokemon/1"
 
-# Fetch data from the CoinCap API
+# Fetch data using requests.get
+
+# Put data into a list of tuples
+# Note the elements in tuple should be of the same order as the insert statement
+
 # Connect to the DuckDB database
 
-# Insert data into the DuckDB Exchanges table
-# Prepare data for insertion
+# Insert data into the DuckDB Pokemon table
 # Hint: Ensure that the data types of the data to be inserted is compatible with DuckDBs data column types in ./setup_db.py
 
 

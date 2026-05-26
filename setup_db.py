@@ -119,6 +119,18 @@ CREATE TABLE IF NOT EXISTS Exchanges (
 """
 )
 
+
+duckdb_conn.execute("DROP TABLE IF EXISTS pokemon")
+duckdb_conn.execute(
+    """
+CREATE TABLE IF NOT EXISTS pokemon (
+    id TEXT,
+    name TEXT,
+    moves VARCHAR[]
+)
+"""
+)
+
 # Commit and close the connection
 duckdb_conn.commit()
 duckdb_conn.close()

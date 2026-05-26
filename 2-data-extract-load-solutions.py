@@ -90,50 +90,38 @@ duckdb_conn.commit()
 duckdb_conn.close()
 
 # API
-# Question: How do you read data from the CoinCap API given below and write the data to a DuckDB database?
-# URL: "https://api.coincap.io/v2/exchanges"
+
+# Question: How do you read data from the Pokemon API given below and write the data to a DuckDB database?
+# url = "https://pokeapi.co/api/v2/pokemon/1"
 # Hint: use requests library
 
 import duckdb
 import requests
 
 # Define the API endpoint
-url = "https://api.coincap.io/v2/exchanges"
+url = "https://pokeapi.co/api/v2/pokemon/1"
 
-# Fetch data from the CoinCap API
+# Fetch data using requests.get
 response = requests.get(url)
-data = response.json()["data"]
+pokemon = response.json() 
+data_to_insert = []
+
+# Put data into a list of tuples
+id = pokemon['id']
+name = pokemon['name']
+moves = pokemon['moves']
+moves_name = [m['move']['name'] for m in response.json()['moves']]
+data_to_insert.append((id, name, moves_name))
 
 # Connect to the DuckDB database
 duckdb_conn = duckdb.connect("duckdb.db")
 
-# Insert data into the DuckDB Exchanges table
+# Insert data into the DuckDB Pokemon table
 insert_query = """
-INSERT INTO Exchanges (id, name, rank, percentTotalVolume, volumeUsd, tradingPairs, socket, exchangeUrl, updated)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+INSERT INTO pokemon (id, name, moves)
+VALUES (?, ?, ?)
 """
-# Prepare data for insertion
-# Hint: Why are we changing the data type?
-insert_data = [
-    (
-        exchange["exchangeId"],
-        exchange["name"],
-        int(exchange["rank"]),
-        (
-            float(exchange["percentTotalVolume"])
-            if exchange["percentTotalVolume"]
-            else None
-        ),
-        float(exchange["volumeUsd"]) if exchange["volumeUsd"] else None,
-        exchange["tradingPairs"],
-        exchange["socket"],
-        exchange["exchangeUrl"],
-        int(exchange["updated"]),
-    )
-    for exchange in data
-]
-
-duckdb_conn.executemany(insert_query, insert_data)
+duckdb_conn.executemany(insert_query, data_to_insert)
 
 # Commit and close the connection
 duckdb_conn.commit()
