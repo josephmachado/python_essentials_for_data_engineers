@@ -1,0 +1,41 @@
+id,first_name,last_name,date_of_birth,email,city,state_code
+1,James,Smith,1968-07-14,james.smith@email.com,Philadelphia,PA
+2,Mary,Johnson,2013-05-25,mary.johnson@email.com,San Antonio,TX
+3,John,Williams,1961-07-01,john.williams@email.com,New York,NY
+4,Patricia,Brown,2003-01-28,patricia.brown@email.com,Atlanta,GA
+5,Robert,Jones,1987-10-22,robert.jones@email.com,Los Angeles,CA
+6,Jennifer,Garcia,1960-03-15,jennifer.garcia@email.com,Austin,TX
+7,Michael,Miller,2000-07-10,michael.miller@email.com,Boston,MA
+8,Linda,Davis,1958-05-13,linda.davis@email.com,Houston,TX
+9,William,Rodriguez,1993-11-26,william.rodriguez@email.com,Los Angeles,CA
+10,David,Martinez,1961-04-08,david.martinez@email.com,San Antonio,TX
+11,Elizabeth,Hernandez,1963-02-20,elizabeth.hernandez@email.com,Houston,TX
+12,Susan,Lopez,1993-01-31,susan.lopez@email.com,Dallas,TX
+13,Joseph,Gonzalez,2005-09-23,joseph.gonzalez@email.com,New York,NY
+14,Karen,Wilson,1975-01-11,karen.wilson@email.com,Los Angeles,CA
+15,Thomas,Anderson,2011-04-16,thomas.anderson@email.com,Seattle,WA
+16,Nancy,Thomas,1960-07-20,nancy.thomas@email.com,Austin,TX
+17,Charles,Taylor,2007-07-14,charles.taylor@email.com,Austin,TX
+18,Lisa,Moore,1959-06-13,lisa.moore@email.com,San Antonio,TX
+19,Daniel,Jackson,1959-03-07,daniel.jackson@email.com,Houston,TX
+20,Betty,Martin,1966-12-12,betty.martin@email.com,Dallas,TX
+21,Matthew,Lee,1992-08-08,matthew.lee@email.com,Phoenix,AZ
+22,Sandra,Perez,2003-07-05,sandra.perez@email.com,Chicago,IL
+23,Anthony,Thompson,2006-03-21,anthony.thompson@email.com,Los Angeles,CA
+24,Ashley,White,2005-04-06,ashley.white@email.com,Phoenix,AZ
+25,Mark,Harris,1971-03-20,mark.harris@email.com,Atlanta,GA
+26,Kimberly,Sanchez,2007-03-06,kimberly.sanchez@email.com,Los Angeles,CA
+27,Donald,Clark,2012-04-26,donald.clark@email.com,Austin,TX
+28,Emily,Ramirez,1988-05-29,emily.ramirez@email.com,Houston,TX
+29,Steven,Lewis,2004-02-21,steven.lewis@email.com,Los Angeles,CA
+30,Donna,Robinson,1960-08-19,donna.robinson@email.com,Denver,CO
+31,Paul,Walker,1960-05-07,paul.walker@email.com,Austin,TX
+32,Michelle,Young,1973-06-23,michelle.young@email.com,Austin,TX
+33,Andrew,Allen,2002-09-14,andrew.allen@email.com,San Diego,CA
+34,Carol,King,1983-03-08,carol.king@email.com,San Antonio,TX
+35,Joshua,Wright,2007-07-14,joshua.wright@email.com,San Diego,CA
+36,Amanda,Scott,1995-08-28,amanda.scott@email.com,Boston,MA
+37,Kenneth,Torres,1981-11-22,kenneth.torres@email.com,Philadelphia,PA
+38,Melissa,Nguyen,1971-02-16,melissa.nguyen@email.com,Houston,TX
+39,Kevin,Hill,1976-11-24,kevin.hill@email.com,Denver,CO
+40,Deborah,Flores,2006-07-14,deborah.flores@email.com,Los Angeles,CA

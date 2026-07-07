@@ -1,0 +1,25 @@
+[project]
+name = "python-essentials-for-data-engineers"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "boto3>=1.43.41",
+    "duckdb>=1.5.4",
+    "freezegun>=1.5.5",
+    "jupyterlab>=4.6.1",
+    "pointblank[duckdb,polars]>=0.25.0",
+    "pyspark>=4.1.2",
+    "pytest>=9.1.1",
+    "requests>=2.34.2",
+    "sqlframe>=4.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "jupyterlab>=4.6.1",
+    "jupyterlab-code-formatter>=3.0.3",
+    "ruff>=0.15.20",
+]
