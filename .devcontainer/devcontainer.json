@@ -1,0 +1,18 @@
+{
+  "name": "uv-jupyter",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/va-h/devcontainers-features/uv:1": {
+      "version": "latest"
+    }
+  },
+  "postCreateCommand": "uv python install 3.13 && uv sync",
+  "postStartCommand": "nohup uv run jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --NotebookApp.token='' > /tmp/jupyter.log 2>&1 &",
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": {
+      "label": "Jupyter Lab",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}

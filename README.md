@@ -24,6 +24,13 @@ Click on the button below to clone this repo and start a Jupyter notebook to pra
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/josephmachado/python_essentials_for_data_engineers)
 
+Give the machine a few minutes to start up, then run the following commands.
+
+```bash 
+uv sync 
+uv run juptyer lab
+```
+
 > [!CAUTION]
 > Do not forget to turn off your CodeSpaces machine when you are done
 
