@@ -47,5 +47,5 @@ uv run jupyter lab
 
 Follow along with code using the [workshop notebook](./notebooks/workshop.ipynb).
 
-Fully working code and solutions are available at [solutions notebook](./notebooks/solutions)
+Fully working code and solutions are available at [solutions notebook](./notebooks/solutions.ipynb)
 
